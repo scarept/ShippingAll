@@ -1,6 +1,6 @@
 <?php
 
-$xml = simplexml_load_file("http://scare.pt/ARQSIWORK2/index.php?idCliente=1&atributo=5&idZona=1");
+$xml = simplexml_load_file("http://scare.pt/ARQSIWORK2/index.php?idCliente=1&atributo=10&idZona=1");
 
 //print_r($xml);
 
