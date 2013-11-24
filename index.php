@@ -17,16 +17,16 @@ if($idCliente ==''){
 else{
 	$database = new Dal();
 	$database->db_connect();
-	//$rs = $database->execute_query("SELECT * FROM Contrato WHERE ID_CLIENTE = $idCliente");
-	$rs = $database->execute_query("SELECT * FROM Cliente WHERE ID_CLIENTE = $idCliente");
+	$rs = $database->execute_query("SELECT * FROM Contrato WHERE ID_CLIENTE = $idCliente");
+	//$rs = $database->execute_query("SELECT * FROM Cliente WHERE ID_CLIENTE = $idCliente");
 	$database->db_close();
 	if(mysql_num_rows($rs) > 0){
 		$reg = mysql_fetch_object($rs);
-		//$xml->addTag('ID_CONTRATO',$rs->ID_CONTRATO);
-		//$xml->addTag('ID_CLIENTE',$rs->ID_CLIENTE);
-		//$xml->addTag('ID_CALCULO',$rs->ID_CALCULO);
-		$xml->addTag('Nome',$rs->NOME);
-		$xml->addTag('Mail',$rs->EMAIL);
+		$xml->addTag('ID_CONTRATO',$reg->ID_CONTRATO);
+		$xml->addTag('ID_CLIENTE',$reg->ID_CLIENTE);
+		$xml->addTag('ID_CALCULO',$reg->ID_CALCULO);
+		//$xml->addTag('Nome',$reg->NOME);
+		//$xml->addTag('Mail',$reg->EMAIL);
 	}
 	else{
 		$erro=2;
